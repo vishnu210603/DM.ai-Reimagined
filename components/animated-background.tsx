@@ -47,7 +47,7 @@ export function AnimatedBackground() {
       ctx.clearRect(0, 0, canvas.width, canvas.height)
 
       // Move wave downward - increased speed from 2 to 3
-      wavePosition += theme === "light" ? 2 : 2
+      wavePosition += theme === "light" ? 2.5 : 2.5
 
       // Reset wave when it goes off screen
       if (wavePosition > canvas.height + 200) {
