@@ -13,13 +13,14 @@ export function Hero3DGraphic() {
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1.2, ease: "easeOut" }}
-        className="relative w-[800px] h-[700px] md:w-[900px] md:h-[800px]"
+        className="relative w-[800px] h-[700px] md:w-[550px] md:h-[680px]"
         style={{ transform: "perspective(1200px)" }}
       >
         {/* Card 1 - Brand Kit - Top Left */}
         <motion.div
           initial={{ opacity: 0, rotateX: 60, rotateY: -20 }}
           animate={{ opacity: 1, rotateX: 15, rotateY: -25 }}
+          whileHover={{ rotateX: 0, rotateY: 0, scale: 1.05 }}
           transition={{ duration: 1, delay: 0.2 }}
           className={`absolute w-48 h-64 md:w-56 md:h-72 rounded-xl shadow-2xl border ${
             theme === "light" ? "bg-white border-gray-200" : "bg-gray-900 border-gray-700"
@@ -56,6 +57,7 @@ export function Hero3DGraphic() {
         <motion.div
           initial={{ opacity: 0, rotateX: 60, rotateY: 20 }}
           animate={{ opacity: 1, rotateX: 10, rotateY: 25 }}
+          whileHover={{ rotateX: 0, rotateY: 0, scale: 1.05 }}
           transition={{ duration: 1, delay: 0.4 }}
           className={`absolute w-48 h-64 md:w-56 md:h-72 rounded-xl shadow-2xl border ${
             theme === "light"
@@ -99,6 +101,7 @@ export function Hero3DGraphic() {
         <motion.div
           initial={{ opacity: 0, rotateX: 60, rotateY: -10 }}
           animate={{ opacity: 1, rotateX: 25, rotateY: -20 }}
+          whileHover={{ rotateX: 0, rotateY: 0, scale: 1.05 }}
           transition={{ duration: 1, delay: 0.6 }}
           className={`absolute w-48 h-64 md:w-56 md:h-72 rounded-xl shadow-2xl border ${
             theme === "light"
@@ -141,6 +144,7 @@ export function Hero3DGraphic() {
         <motion.div
           initial={{ opacity: 0, rotateX: 60, rotateY: 30 }}
           animate={{ opacity: 1, rotateX: 30, rotateY: 20 }}
+          whileHover={{ rotateX: 0, rotateY: 0, scale: 1.05 }}
           transition={{ duration: 1, delay: 0.8 }}
           className={`absolute w-48 h-64 md:w-56 md:h-72 rounded-xl shadow-2xl border ${
             theme === "light"

@@ -22,8 +22,8 @@ export function AnimatedBackground() {
     resizeCanvas()
     window.addEventListener("resize", resizeCanvas)
 
-    const gridSize = 30 // Reduced from 40 for tighter spacing
-    const boxWidth = gridSize * 3 // Increased from 2 to 3 for longer rectangles
+    const gridSize = 40 // Reduced from 40 for tighter spacing
+    const boxWidth = gridSize * 2.5 // Increased from 2 to 3 for longer rectangles
     const boxHeight = gridSize
     const cols = Math.ceil(canvas.width / boxWidth)
     const rows = Math.ceil(canvas.height / boxHeight)
@@ -47,7 +47,7 @@ export function AnimatedBackground() {
       ctx.clearRect(0, 0, canvas.width, canvas.height)
 
       // Move wave downward - increased speed from 2 to 3
-      wavePosition += theme === "light" ? 5 : 3
+      wavePosition += theme === "light" ? 2 : 2
 
       // Reset wave when it goes off screen
       if (wavePosition > canvas.height + 200) {
@@ -60,7 +60,7 @@ export function AnimatedBackground() {
 
         // Create wave effect with gradient - reduced wave width from 100 to 70
         let glowIntensity = 0
-        const waveWidth = theme === "light" ? 40 : 70
+        const waveWidth = theme === "light" ? 70 : 90
         if (distanceToWave < waveWidth) {
           glowIntensity = (waveWidth - distanceToWave) / waveWidth
           // Add some horizontal wave variation

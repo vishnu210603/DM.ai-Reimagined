@@ -85,9 +85,9 @@ export function HowItWorksSection() {
                 style={{ transform: "perspective(1000px)" }}
               >
                 {/* Step Number */}
-                <div className="absolute -top-4 -left-4">
-                  <div className="w-8 h-8 bg-gradient-to-r from-red-500 to-orange-500 rounded-full flex items-center justify-center text-white font-bold text-sm shadow-lg">
-                    {index + 1}
+                <div className="absolute -top-4 -left-2">
+                  <div className="w-16 h-8 bg-gradient-to-r from-red-500 to-orange-500 rounded-full flex items-center justify-center text-white font-bold text-sm shadow-lg">
+                   Step {index + 1}
                   </div>
                 </div>
 
@@ -126,37 +126,7 @@ export function HowItWorksSection() {
                 </div>
 
                 {/* Refined Arrow for desktop */}
-                {index < steps.length - 1 && (
-                  <div className="hidden lg:block absolute top-1/2 -right-8 transform -translate-y-1/2 z-20">
-                    <motion.div
-                      animate={{
-                        x: [0, 8, 0],
-                        opacity: [0.6, 1, 0.6],
-                      }}
-                      transition={{
-                        duration: 2,
-                        repeat: Number.POSITIVE_INFINITY,
-                        ease: "easeInOut",
-                      }}
-                      className="relative"
-                    >
-                      {/* Arrow background glow */}
-                      <div className="absolute inset-0 bg-red-500/20 rounded-full blur-md scale-150"></div>
-                      {/* Main arrow */}
-                      <div
-                        className={`relative w-8 h-8 rounded-full flex items-center justify-center border-2 shadow-lg ${
-                          theme === "light"
-                            ? "bg-white border-red-300 text-red-500"
-                            : "bg-gray-800 border-red-500/50 text-red-400"
-                        }`}
-                      >
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                        </svg>
-                      </div>
-                    </motion.div>
-                  </div>
-                )}
+                
               </motion.div>
             ))}
           </div>

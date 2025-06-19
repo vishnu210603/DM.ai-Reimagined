@@ -98,16 +98,13 @@ export function PricingSection() {
               className={`relative backdrop-blur-sm border-2 rounded-2xl p-8 shadow-2xl transition-all duration-300 cursor-pointer ${
                 selectedPlan === plan.name
                   ? "border-red-500 shadow-red-500/20"
-                  : plan.popular
-                    ? theme === "light"
-                      ? "bg-gradient-to-br from-red-50 to-orange-50 border-red-200 shadow-red-100"
-                      : "bg-gradient-to-br from-red-900/20 to-orange-900/20 border-red-500/50 shadow-red-500/10"
-                    : theme === "light"
-                      ? "bg-white/80 border-gray-200/50 hover:border-red-200/50"
-                      : "bg-gray-900/80 border-gray-700/50 hover:border-red-500/50"
+                  : theme === "light"
+                    ? "bg-white/80 border-gray-200/50 hover:border-red-200/50"
+                    : "bg-gray-900/80 border-gray-700/50 hover:border-red-500/50"
               }`}
               style={{ transform: "perspective(1000px)" }}
             >
+              {/* Most Popular Badge */}
               {plan.popular && (
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
                   <div className="bg-gradient-to-r from-red-500 to-orange-500 text-white px-4 py-2 rounded-full text-sm font-semibold flex items-center space-x-1">
@@ -117,6 +114,7 @@ export function PricingSection() {
                 </div>
               )}
 
+              {/* Selected Plan Indicator */}
               {selectedPlan === plan.name && (
                 <div className="absolute -top-2 -right-2">
                   <div className="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center">
@@ -125,6 +123,7 @@ export function PricingSection() {
                 </div>
               )}
 
+              {/* Plan Header */}
               <div className="text-center mb-8">
                 <h3 className={`text-2xl font-bold mb-2 ${theme === "light" ? "text-gray-900" : "text-white"}`}>
                   {plan.name}
@@ -132,7 +131,7 @@ export function PricingSection() {
                 <div className="mb-4">
                   <span
                     className={`text-4xl font-bold ${
-                      selectedPlan === plan.name || plan.popular
+                      selectedPlan === plan.name
                         ? "bg-gradient-to-r from-red-500 to-orange-500 bg-clip-text text-transparent"
                         : theme === "light"
                           ? "text-gray-900"
@@ -148,12 +147,13 @@ export function PricingSection() {
                 <p className={`${theme === "light" ? "text-gray-600" : "text-gray-300"}`}>{plan.description}</p>
               </div>
 
+              {/* Plan Features */}
               <ul className="space-y-4 mb-8">
                 {plan.features.map((feature, featureIndex) => (
                   <li key={featureIndex} className="flex items-start space-x-3">
                     <div
                       className={`w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 ${
-                        selectedPlan === plan.name || plan.popular
+                        selectedPlan === plan.name
                           ? "bg-gradient-to-r from-red-500 to-orange-500"
                           : theme === "light"
                             ? "bg-green-500"
@@ -167,9 +167,10 @@ export function PricingSection() {
                 ))}
               </ul>
 
+              {/* CTA Button */}
               <Button
                 className={`w-full py-3 text-lg font-semibold transition-all duration-300 ${
-                  selectedPlan === plan.name || plan.popular
+                  selectedPlan === plan.name
                     ? "bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-700 hover:to-orange-700 text-white shadow-lg hover:shadow-red-500/25"
                     : theme === "light"
                       ? "bg-gray-900 hover:bg-gray-800 text-white"
@@ -182,6 +183,7 @@ export function PricingSection() {
           ))}
         </div>
 
+        {/* Guarantee Section */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -191,7 +193,7 @@ export function PricingSection() {
           <p className={`text-lg ${theme === "light" ? "text-gray-600" : "text-gray-300"}`}>
             All plans include a 14-day free trial. No credit card required.
           </p>
-          <div className="flex justify-center space-x-8 mt-6">
+          <div className="flex flex-wrap justify-center gap-x-8 gap-y-4 mt-6">
             <div className="flex items-center space-x-2">
               <Check className="text-green-500" size={20} />
               <span className={`${theme === "light" ? "text-gray-600" : "text-gray-300"}`}>Cancel anytime</span>
